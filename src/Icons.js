@@ -50,4 +50,13 @@ function Comment() {
 function Share() {
     return <Image style={{ width: 24, height: 24 }} source={require('./../assets/share.png')} />
 }
-export { Logo, Home, HomeField, Search, SearchField, Reel, ReelField, Shop, ShopField, Plus, Heart, Messenger, Dots, Bookmark, Comment, Share }
+function Dropdown() {
+    return <Image style={{ width: 24, height: 24 }} source={require('./../assets/dropdown.png')} />
+}
+function BurgerMenu() {
+    return <Image style={{ width: 20, height: 20 }} source={require('./../assets/Burger.png')} />
+}
+function ImageGoesHere() {
+    return <Image style={{ width: 50, height: 50 }} source={require('./../assets/SavedStory5.png')} />
+}
+export { Logo, Home, HomeField, Search, SearchField, Reel, ReelField, Shop, ShopField, Plus, Heart, Messenger, Dots, Bookmark, Comment, Share, Dropdown, BurgerMenu, ImageGoesHere }

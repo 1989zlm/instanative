@@ -1,6 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Bookmark, Comment, Dots, Heart, Share } from "../../Icons";
 import FitImage from "./FitImage";
+import dayjs from 'dayjs';
+import ReadMore from '@fawazahmed/react-native-read-more';
 
 export default function Post({ post }) {
 
@@ -34,6 +36,30 @@ export default function Post({ post }) {
                     </TouchableOpacity>
                 </View>
             </View>
+            <View>
+                <Text style={styles.likes} >{post?.likes} likes </Text>
+            </View>
+            <ReadMore
+                seeLessStyle={{ color: '#999' }}
+                seeLessText="Daha az"
+                seeMoreText="Daha fazla"
+                seeMoreStyle={{ color: '#999' }}
+                numberOfLines={2}>
+                <Text style={styles.user}>{post?.user.name}</Text>
+
+                {post?.description}
+            </ReadMore>
+            {post?.comments > 0 && (
+                <TouchableOpacity style={{ paddingBottom: 7 }} activeOpacity={0.7}>
+                    <Text style={styles.comments}>
+                        View all {post?.comments} comments
+                    </Text>
+                </TouchableOpacity>
+            )}
+            <View>
+                {/* <Text style={styles.date}>{dayjs(post?.date).fromNow()}</Text> */}
+                <Text style={styles.translation}>See Tranlation</Text>
+            </View>
 
         </View >
     )
@@ -47,7 +73,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        marginVertical: 10,
     },
     username: {
         flexDirection: 'row',
@@ -78,6 +105,26 @@ const styles = StyleSheet.create({
     },
     action: {
         marginRight: 12,
-    }
+    },
+    user: {
+        fontWeight: '600',
+    },
+    comments: {
+        opacity: 0.5,
+        marginTop: 3,
+    },
 
+    date: {
+        fontSize: 13,
+        opacity: 0.5
+    },
+    translation: {
+        fontSize: 13,
+        fontWeight: '600',
+        margin: 7,
+    },
+    likes: {
+        fontWeight: '600',
+        marginVertical: 4,
+    }
 })

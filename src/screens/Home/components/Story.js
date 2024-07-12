@@ -15,7 +15,7 @@ export default function Story({ story }) {
     )
 }
 const styles = StyleSheet.create({
-    avatar: { width: 60, heigth: 60, borderRadius: 60 },
+
     story: {
         width: 67,
         marginHorizontal: 8,
@@ -23,13 +23,15 @@ const styles = StyleSheet.create({
     cover: {
         width: 65,
         height: 65,
-        borderRadius: 33.5,
+        borderRadius: 33,
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 5,
     },
+    avatar: { width: 60, height: 60, borderRadius: 60 },
     username: {
         fontSize: 12,
-    }
+    },
+
 
 })

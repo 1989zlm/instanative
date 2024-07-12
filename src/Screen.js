@@ -3,7 +3,7 @@ import HomeScreen from './screens/Home';
 import SearchScreen from './screens/Search';
 import ReelScreen from './screens/Reel';
 import ShopScreen from './screens/Shop';
-import ProfileScreen from './screens/Profile';
+import ProfileScreen from './screens/Profile/Profile';
 import { SearchField, Home, HomeField, Search, ReelField, Reel, Shop, ShopField } from './Icons';
 import { Image, StyleSheet } from 'react-native';
 
